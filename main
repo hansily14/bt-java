@@ -1,0 +1,168 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+        Kho kho = new Kho();
+        int chon;
+		do {
+            System.out.println("=== MENU ===");
+            System.out.println("1. Thêm sản phẩm");
+            System.out.println("2. Xem danh sách sản phẩm");
+            System.out.println("3. Xóa 1 sản phẩm");          
+            System.out.println("4. Số lượng sản phẩm");
+            System.out.println("5. Tìm kiếm sản phẩm");
+            System.out.println("6. Thoát chương trình");
+            System.out.print("Nhập lựa chọn của bạn (1-6): ");
+             chon = sc.nextInt();
+            sc.nextLine(); // consume newline character
+            
+				switch (chon) {
+				case 1:
+					
+				    System.out.println("Bạn muốn thêm sản phẩm loại nào?");
+				    System.out.println("1. Áo nam");
+				    System.out.println("2. Áo nữ");
+				    System.out.println("3. Quần nam");
+				    System.out.println("4. Quần nữ");
+				    System.out.print("Nhập lựa chọn của bạn (1-4): ");
+				    int loai = sc.nextInt();
+				    sc.nextLine(); // consume newline character
+				    
+				    switch (loai) {
+				        case 1:
+				        	 {
+				            Aonam anam = new Aonam();
+				            anam.nhapthongtin();
+				            kho.themAonam(anam);
+				            System.out.println("Thêm áo nam thành công!");
+				            break;
+				        	}
+				        case 2: {
+				            Aonu anu = new Aonu();
+				            anu.nhapthongtin();
+				            kho.themAonu(anu);
+				            System.out.println("Thêm áo nữ thành công!");
+				            break ;
+				        }
+				            
+				        case 3: {
+				            Quannam qnam = new Quannam();
+				            qnam.nhapthongtin();
+				            kho.themQuannam(qnam);
+				            System.out.println("Thêm quần nam thành công!");
+				            break;
+				        }
+				        case 4: {
+				            Quannu qnu = new Quannu();
+				            qnu.nhapthongtin();
+				            kho.themQuannu(qnu);
+				            System.out.println("Thêm quần nữ thành công!");
+				           break;
+				       
+				    }
+				    }
+				
+					break;	
+					case 2:
+					
+				    System.out.println("Bạn muốn xem danh sách sản phẩm loại nào?");
+				    System.out.println("1. Áo nam");
+				    System.out.println("2. Áo nữ");
+				    System.out.println("3. Quần nam");
+				    System.out.println("4. Quần nữ");
+				    System.out.print("Nhập lựa chọn của bạn (1-4): ");
+				    int loai1 = sc.nextInt();
+				    sc.nextLine();
+				    switch (loai1) {
+				    case 1:
+				        System.out.println("Danh sách áo nam:");
+				        kho.xuatThongTin();
+				        break;
+				    case 2:
+				        System.out.println("Danh sách áo nữ:");
+				        kho.xuatThongTin();
+				        break;
+				    case 3:
+				        System.out.println("Danh sách quần nam:");
+				        kho.xuatThongTin();
+				        break;
+				    case 4:
+				        System.out.println("Danh sách quần nữ:");
+				        kho.xuatThongTin();
+				        break;
+				    default:
+				        System.out.println("Lựa chọn không hợp lệ!");
+				    }
+				        break;
+		   
+				    case 3:
+				        System.out.println("Bạn muốn xóa sản phẩm loại nào?");
+				        System.out.println("1. Áo nam");
+				        System.out.println("2. Áo nữ");
+				        System.out.println("3. Quần nam");
+				        System.out.println("4. Quần nữ");
+				        System.out.print("Nhập lựa chọn của bạn (1-4): ");
+				        int loai2 = sc.nextInt();
+				        sc.nextLine(); // Đọc bỏ ký tự Enter còn lại trong bộ đệm
+				        switch (loai2) {
+				            case 1:{
+				            	System.out.println("nhap mã sp càn xóa");
+				            	String Ma= sc.nextLine();
+				            	Aonam aonam= new Aonam();
+				                System.out.println("Xóa  áo nam thành công!"+ kho.xoaThongTin(Ma));
+				                break;
+				            }
+				            case 2:
+				            {
+				            	System.out.println("nhap mã sp càn xóa");
+				            	String Ma= sc.nextLine();
+				                Aonu anu = new Aonu();
+				                System.out.println("Xóa áo nữ thành công"+ kho.xoaThongTin(Ma));
+				                break;
+				            }
+				            case 3:
+				            {
+				            	System.out.println("nhap mã sp càn xóa");
+				            	String Ma= sc.nextLine();
+				                Quannam qnam = new Quannam();
+				                System.out.println("Xóa quần nam thành công" +kho.xoaThongTin(Ma));
+				                break;
+				            }
+				            case 4:{
+				            	System.out.println("nhap mã sp càn xóa");
+				            	String Ma= sc.nextLine();
+				                Quannu qnu = new Quannu();        
+				                System.out.println("Xóa quần nữ thành công"+kho.xoaThongTin(Ma));
+				                break;
+				         
+				        }
+				           
+				        }break;
+	       	     
+				    case 4:
+				    {
+				        System.out.println("Số lượng sản phẩm hiện có của từng loại:");
+				        System.out.println("Áo nam: " +kho.soluongAonam());
+				        System.out.println("Áo nữ: " + kho.soluongAonu());
+				        System.out.println("Quần nam: " + kho.soluongQuannam());
+				        System.out.println("Quần nữ: " + kho.soluongQuannu());
+				        break;
+				    }
+      case 5: {
+				System.out.println("nhap vao ma");
+				String Ma = sc.nextLine();
+				System.out.println("ket qua tim kiem la");
+				kho.timKiem(Ma);
+				break;
+	}
+				}
+
+	
+        }while(chon!=0);
+}
+}
+
+
