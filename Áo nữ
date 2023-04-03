@@ -1,0 +1,65 @@
+import java.util.Objects;
+import java.util.Scanner;
+
+public class Aonu extends QuabAo {
+		
+		String loaico;
+		String loaitayao;
+	    public Aonu(String size, String chatlieu, String mausac,String Ma, String loaico, String loaitayao) {
+	        super(size,chatlieu,mausac, Ma);
+	        this.loaico=loaico;
+	        this.loaitayao=loaitayao;
+	    }
+public Aonu() {}
+	 public String getloaico() {
+		 return loaico;
+	 }
+	 public String getloaitayao() {
+		 return loaitayao;
+	 }
+	 public void setloaico(String loaico) {
+		 this.loaico=loaico;
+	 }
+	 public void setloaitayao(String loaitayao) {
+		 this.loaitayao=loaitayao;
+	 }
+	    @Override
+	    public String toString(){
+			return "Áonu[size="+Size+",  mausac="+Mausac+", Chatlieu="+Chatlieu+", loaico="+loaico+", loaitayao="+loaitayao+"]";
+		}
+	  
+       @Override
+	    public boolean equals(Object obj) {
+	        if (this == obj)
+	            return true;
+	        if (obj == null)
+	            return false;
+	        if (getClass() != obj.getClass())
+	            return false;
+	        Aonam other = (Aonam) obj;
+	        return Objects.equals(Chatlieu, other.toString());
+	    }
+	    @Override
+     	public int hashCode() {
+     		return Objects.hash(Ma);
+     	}
+
+
+		public void nhapthongtin() {
+			Scanner sc = new Scanner(System.in);
+		    System.out.print("Nhập size: ");
+		    this.setSize(sc.nextLine());
+		    System.out.print("Nhập chất liệu: ");
+		    this.setChatlieu(sc.nextLine());
+		    System.out.print("Nhập màu sắc: ");
+		    this.setMausac(sc.nextLine());
+		    System.out.print("Nhập loại cổ: ");
+		    this.setloaico(sc.nextLine());
+		    System.out.print("Nhập loại tay ao: ");
+		    this.setloaitayao(sc.nextLine());
+		    System.out.println(" Nhap ma");
+		    this.setMa(sc.nextLine());
+			
+		}
+
+}
