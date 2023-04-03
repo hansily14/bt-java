@@ -1,0 +1,60 @@
+import java.util.Objects;
+import java.util.Scanner;
+
+public class Quannam extends QuabAo {
+	  String loaiongquan;
+
+	    public Quannam(String size, String chatlieu, String mausac,String Ma ,String loaiongquan) {
+	        super(size, chatlieu, mausac, Ma);
+	        this.loaiongquan=loaiongquan;
+	    }
+	    public Quannam() {
+	    	
+	    	}  
+	    public String getloaiongquan() {
+	    	return loaiongquan;
+	    }
+	    public void setloaiongquan(String loaiongquan) {
+	    	this.loaiongquan=loaiongquan;
+	    }
+	    @Override
+	    public String toString() {
+	        return "quannam [Size=" + Size + ", Chatlieu=" + Chatlieu + ", Mausac=" + Mausac + ", Loaiongquan="
+	                + loaiongquan+ "]";
+	    }
+         @Override
+	    public boolean equals(Object obj) {
+	        if (this == obj)
+	            return true;
+	        if (obj == null)
+	            return false;
+	        if (getClass() != obj.getClass())
+	            return false;
+	        Quannam other = (Quannam) obj;
+	        return Objects.equals(Chatlieu, other.Chatlieu);
+	    }
+         @Override
+     	public int hashCode() {
+     		return Objects.hash(Ma);
+     	}
+
+
+
+		public void nhapthongtin() {
+			 Scanner sc = new Scanner(System.in);
+			    System.out.print("Nhập size: ");
+			    this.setSize(sc.nextLine());
+			    System.out.print("Nhập chất liệu: ");
+			    this.setChatlieu(sc.nextLine());
+			    System.out.print("Nhập màu sắc: ");
+			    this.setMausac(sc.nextLine());
+			    System.out.print("Nhập loại ống quần: ");
+			    this.setloaiongquan(sc.nextLine());
+			    System.out.println(" Nhap ma");
+			    this.setMa(sc.nextLine());
+			
+		}
+	
+		}
+
+
