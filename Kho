@@ -1,0 +1,133 @@
+import java.util.ArrayList;
+
+public class Kho {
+	 private static  ArrayList<QuabAo> kho;
+	    public Kho() {
+	        kho = new ArrayList<QuabAo>();
+	    }
+
+	    // thêm quần nam
+	    public void themQuannam(Quannam qn) {
+	        this.kho.add(qn);
+	    }
+	    //thêm quần nữ
+	    public void themQuannu(Quannu qnu) {
+	    	this.kho.add(qnu);
+	    }
+	    // thêm áo nam
+	    public void themAonam(Aonam an) {
+	    	this.kho.add(an);
+	    }
+	    // thêm áo nữ
+	    public void themAonu(Aonu anu) {
+	    	this.kho.add(anu);
+	    }
+
+	    // xuất thông tin
+	    public void xuatThongTin() {
+	        for (QuabAo quannam : kho) {
+	            System.out.println(quannam);
+	        }
+	    }
+	    public void xuatThongTin2() {
+	        for (QuabAo quannu : kho) {
+	            System.out.println(quannu);
+	        }
+	    }
+	    public void xuatThongTin3() {
+	        for (QuabAo aonam : kho) {
+	            System.out.println(aonam);
+	        }
+	    }
+	    public void xuatThongTin4() {
+	        for (QuabAo aonu : kho) {
+	            System.out.println(aonu);
+	        }
+	    }
+	    
+	    // kiểm tra số lượng
+	    public int soluongQuannam() {int count=0;
+	    	
+	       for (QuabAo quabAo : kho) {
+			if(quabAo instanceof Quannam) {
+				count++;
+			}
+		}
+	       return count;
+	    }
+	    public int soluongQuannu() {int count=0;
+    	
+	       for (QuabAo quabAo : kho) {
+			if(quabAo instanceof Quannu) {
+				count++;
+			}
+		}
+	       return count;
+	    }
+	    public int soluongAonam() {int count=0;
+    	
+	       for (QuabAo quabAo : kho) {
+			if(quabAo instanceof Aonam) {
+				count++;
+			}
+		}
+	       return count;
+	    }
+	    public int soluongAonu() {int count=0;
+    	
+	       for (QuabAo quabAo : kho) {
+			if(quabAo instanceof Aonu) {
+				count++;
+			}
+		}
+	       return count;
+	    }
+
+	    // xóa 1 thông tin 
+	    public boolean xoaThongTin(Object Ma) {
+	    	for (QuabAo qa : kho) {
+	            if (qa.getMa().equals(Ma)) {
+	                kho.remove(qa);
+	                return true;
+	            }
+	        }
+	        return false;
+	    }
+
+	    // tìm kiếm thông tin theo Mã
+	    public void timKiem(String Ma) {
+	    	for (QuabAo quannam : kho) {
+				if (quannam.getMa().equals(Ma)) {
+					System.out.println(quannam);
+	    }
+	    	}
+	    }
+	    public void timKiem2(String Ma) {
+	    	for (QuabAo quannu : kho) {
+				if (quannu.getMa().equals(Ma)) {
+					System.out.println(quannu);
+	    }
+	    	}
+	    }
+	    public void timKiem3(String Ma) {
+	    	for (QuabAo aonam : kho) {
+				if (aonam.getMa().equals(Ma) ) {
+					System.out.println(aonam);
+	    }
+	    	}
+	    }
+	    public void timKiem4(String Ma) {
+	    	for (QuabAo aonu : kho) {
+				if (aonu.getMa().equals(Ma) ) {
+					System.out.println(aonu);
+	    }
+	    	}
+	    }
+	    
+
+	    // thiết lập danh sách quần nam
+	    public void setDsQuannam(ArrayList<Quannam> dsQuannam) {
+	        this.kho = kho;
+	    }
+
+}
