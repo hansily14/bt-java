@@ -2,7 +2,12 @@ import java.util.Objects;
 
 public class QuabAo {
 	public String Size, Chatlieu, Mausac, Ma;
-
+	public QuabAo(String size, String chatlieu, String mausac, String Ma ) {
+        Size = size;
+        Chatlieu = chatlieu;
+        Mausac = mausac;
+           Ma=Ma;       
+    }
 public QuabAo() {}
 	@Override
 	public boolean equals(Object obj) {
@@ -15,12 +20,10 @@ public QuabAo() {}
 		QuabAo other = (QuabAo) obj;
 		return Objects.equals(Ma, other.Ma);
 	}
-	public QuabAo(String size, String chatlieu, String mausac, String Ma ) {
-        Size = size;
-        Chatlieu = chatlieu;
-        Mausac = mausac;
-           Ma=Ma;       
-    }
+	 @Override
+  	public int hashCode() {
+  		return Objects.hash(Ma);
+  	}
     public String getMa() {
     	return Ma;
     }
@@ -55,6 +58,8 @@ public QuabAo() {}
         return Size + Chatlieu + Mausac +Ma ;
     }
 }
+
+
 
 
 
