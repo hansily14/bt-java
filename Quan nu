@@ -1,0 +1,51 @@
+import java.util.Objects;
+import java.util.Scanner;
+
+public class Quannu extends QuabAo {
+	    public Quannu(String size, String chatlieu, String mausac, String Ma) {
+	        super(size, chatlieu, mausac, Ma);
+	    }
+	    public Quannu() {
+	    	
+	    }
+
+	    @Override
+	    public String toString() {
+	        return "quannu [Size=" + Size + ", Chatlieu=" + Chatlieu + ", Mausac=" + Mausac + "]";
+	    }
+       @Override
+	    public boolean equals(Object obj) {
+	        if (this == obj)
+	            return true;
+	        if (obj == null)
+	            return false;
+	        if (getClass() != obj.getClass())
+	            return false;
+	        Quannu other = (Quannu) obj;
+	        return Objects.equals(Chatlieu, other.Chatlieu);
+	    }
+	    @Override
+     	public int hashCode() {
+     		return Objects.hash(Ma);
+     	}
+
+
+		public void nhapthongtin() {
+			 Scanner sc = new Scanner(System.in);
+			    System.out.print("Nhập size: ");
+			    this.setSize(sc.nextLine());
+			    System.out.print("Nhập chất liệu: ");
+			    this.setChatlieu(sc.nextLine());
+			    System.out.print("Nhập màu sắc: ");
+			    this.setMausac(sc.nextLine());
+			    System.out.println(" Nhap ma");
+			    this.setMa(sc.nextLine());
+			   
+			
+		}
+
+	}
+	
+
+    
+
